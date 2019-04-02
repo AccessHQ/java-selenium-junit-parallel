@@ -51,12 +51,45 @@
     <profiles>
         <profile>
             <id>parallel</id>
+            <activation>
+                <activeByDefault>true</activeByDefault>
+            </activation>
             <properties>
                 <enable-parallel-tests>true</enable-parallel-tests>
                 <excluded-groups>SINGLE_THREAD_ONLY</excluded-groups>
             </properties>
         </profile>
-
+        
+        <profile>
+            <id>dev</id>
+            <properties>
+            	<hub-url>http://localhost:4444/wd/hub</hub-url>
+                <app-url>https://dev.accesshq.com</app-url> <!-- e.g -->
+                <implicit-wait-seconds>5</implicit-wait-seconds>
+            </properties>
+        </profile>
+        
+        <profile>
+            <id>test</id>
+            <properties>
+            	<hub-url>http://localhost:4444/wd/hub</hub-url>
+                <app-url>https://test.accesshq.com</app-url> <!-- e.g -->
+                <implicit-wait-seconds>5</implicit-wait-seconds>
+            </properties>
+        </profile>
+        
+        <profile>
+            <id>prod</id>
+            <activation>
+                <activeByDefault>true</activeByDefault>
+            </activation>
+            <properties>
+            	<hub-url>http://localhost:4444/wd/hub</hub-url>
+                <app-url>https://accesshq.com</app-url>
+                <implicit-wait-seconds>2</implicit-wait-seconds>
+            </properties>
+        </profile>
+        
         <profile>
             <id>chrome</id>
             <activation>
@@ -92,7 +125,13 @@
         </profile>
     </profiles>
     <build>
-        <finalName>running-unit-tests</finalName>
+    	<testResources>
+            <testResource>
+                <directory>src/test/resources</directory>
+                <filtering>true</filtering>
+            </testResource>
+        </testResources>
+       
         <plugins>
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
