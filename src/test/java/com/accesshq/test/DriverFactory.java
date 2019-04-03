@@ -62,8 +62,14 @@ public class DriverFactory
 	private static WebDriver buildLocalDriver() { 
 		switch (Config.BROWSER) {
 			case "chrome":
+				// chromedriver in path, or set ....
+                // System.setProperty("webdriver.chrome.driver", "path/to/chromedriver");
+	
 				return new ChromeDriver();
 			case "firefox":
+				// geckodriver in path, or set ....
+                // System.setProperty("webdriver.gecko.driver", "path/to/geckodriver");
+				
 				return new FirefoxDriver();			
 			default:
 				throw new IllegalArgumentException(String.format("Invalid local browser parameter - '%s'", Config.BROWSER));
