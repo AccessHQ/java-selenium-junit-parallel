@@ -98,9 +98,6 @@
         <!-- Active by Default - chrome browser -->
         <profile>
             <id>chrome</id>
-            <activation>
-                <activeByDefault>true</activeByDefault>
-            </activation>
             <properties>
                 <browser>chrome</browser>
             </properties>
@@ -109,6 +106,9 @@
 		<!-- firefox browser -->
         <profile>
             <id>firefox</id>
+            <activation>
+                <activeByDefault>true</activeByDefault>
+            </activation>
             <properties>
                 <browser>firefox</browser>
             </properties>
