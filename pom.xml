@@ -49,6 +49,8 @@
         </dependency>
     </dependencies>
     <profiles>
+    
+    	<!-- Active by Default - execute tests in parallel -->
         <profile>
             <id>parallel</id>
             <activation>
@@ -60,6 +62,7 @@
             </properties>
         </profile>
         
+        <!-- dev environment example -->
         <profile>
             <id>dev</id>
             <properties>
@@ -69,6 +72,7 @@
             </properties>
         </profile>
         
+        <!-- test environment example -->
         <profile>
             <id>test</id>
             <properties>
@@ -78,6 +82,7 @@
             </properties>
         </profile>
         
+        <!-- Active by Default - prod environment example -->
         <profile>
             <id>prod</id>
             <activation>
@@ -90,6 +95,7 @@
             </properties>
         </profile>
         
+        <!-- Active by Default - chrome browser -->
         <profile>
             <id>chrome</id>
             <activation>
@@ -99,14 +105,16 @@
                 <browser>chrome</browser>
             </properties>
         </profile>
-
+		
+		<!-- firefox browser -->
         <profile>
             <id>firefox</id>
             <properties>
                 <browser>firefox</browser>
             </properties>
         </profile>
-
+		
+		<!-- Active by Default - local run -->
         <profile>
             <id>local</id>
             <activation>
@@ -117,6 +125,7 @@
             </properties>
         </profile>
 
+		<!-- remote run -->
         <profile>
             <id>remote</id>
             <properties>
