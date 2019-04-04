@@ -1,35 +1,15 @@
 package com.accesshq.test;
 
-import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.Assertions;
-import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
-import org.junit.jupiter.api.parallel.Execution;
-import org.junit.jupiter.api.parallel.ExecutionMode;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 
 import com.accesshq.util.Config;
 
-@Execution(ExecutionMode.CONCURRENT)
-class ExampleTests {
 
-	protected static ThreadLocal<WebDriver> driverInstance = new ThreadLocal<WebDriver>();
-	
-	protected WebDriver getDriver() {
-		return driverInstance.get();
-	}
-	
-	@BeforeEach
-	void setUp() throws Exception {
-		driverInstance.set(DriverFactory.buildDriver());
-	}
-	
-	@AfterEach
-	void teardown() {
-		getDriver().quit();
-	}
+class ExampleTests extends BaseTestSuite {
 
 	@Test
 	void test1() {
