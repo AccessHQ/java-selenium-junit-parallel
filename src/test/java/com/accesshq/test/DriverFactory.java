@@ -46,11 +46,11 @@ public class DriverFactory
             case "chrome":
                 ChromeOptions chromeOptions = new ChromeOptions();
                 chromeOptions.addArguments("--start-maximized");
-                chromeOptions.setCapability(CapabilityType.PLATFORM_NAME, Platform.LINUX);
+                chromeOptions.setCapability(CapabilityType.PLATFORM_NAME, Platform.ANY);
                 return new RemoteWebDriver(new URL(Config.HUB_URL), chromeOptions);
             case "firefox":
                 FirefoxOptions firefoxOptions = new FirefoxOptions();
-                firefoxOptions.setCapability(CapabilityType.PLATFORM_NAME, Platform.LINUX);
+                firefoxOptions.setCapability(CapabilityType.PLATFORM_NAME, Platform.ANY);
                 return new RemoteWebDriver(new URL(Config.HUB_URL), firefoxOptions);
             default:
                 throw new IllegalArgumentException(String.format("Invalid remote browser parameter - '%s'", Config.BROWSER));
