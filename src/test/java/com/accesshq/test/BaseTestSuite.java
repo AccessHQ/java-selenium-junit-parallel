@@ -18,6 +18,8 @@ import org.openqa.selenium.TakesScreenshot;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebDriverException;
 
+import com.accesshq.util.Config;
+
 @ExtendWith(BaseTestSuite.class)
 @Execution(ExecutionMode.CONCURRENT)
 public class BaseTestSuite implements AfterEachCallback {
@@ -30,7 +32,9 @@ public class BaseTestSuite implements AfterEachCallback {
 
 	@BeforeEach
 	void setUp() throws Exception {
-		driverInstance.set(DriverFactory.buildDriver());
+		WebDriver driver = DriverFactory.buildDriver();
+		driver.get(Config.APP_URL);
+		driverInstance.set(driver);
 	}
 
 	@Override
