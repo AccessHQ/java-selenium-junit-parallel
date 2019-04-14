@@ -28,6 +28,10 @@ This will use the defaults and run `local`, `firefox`, `prod`, `parallel`
 
 This will execute the tests on Chrome in Selenium Grid with the Production URL.
 
+`mvn clean test -P chrome,remote,prod,parallel`
+
+This is also valid syntax
+
 ## Selenium Grid
 
 The following repository can be used to spin up a Selenium Grid using Docker:
