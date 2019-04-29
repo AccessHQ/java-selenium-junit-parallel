@@ -1,4 +1,4 @@
-# java-selenium-docker-junit
+# java-selenium-junit-parallel
 
 Parallel test execution using:
 

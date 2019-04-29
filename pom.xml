@@ -2,11 +2,11 @@
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
     <modelVersion>4.0.0</modelVersion>
     <groupId>com.accesshq</groupId>
-    <artifactId>java-selenium-docker-junit</artifactId>
+    <artifactId>java-selenium-junit-parallel</artifactId>
     <version>0.1</version>
-    <name>java-selenium-docker-junit</name>
+    <name>java-selenium-junit-parallel</name>
     <description>
-        Parallel test execution using Java, JUnit, Selenium WebDriver, Selenium Grid and Docker
+        Parallel test execution using Java, JUnit, Selenium WebDriver, Selenium Grid and optionally Docker
     </description>
 
     <properties>
