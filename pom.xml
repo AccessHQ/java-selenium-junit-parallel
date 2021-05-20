@@ -10,8 +10,8 @@
     </description>
 
     <properties>
-        <jdk.version>1.8</jdk.version>
-        <junit.jupiter.version>5.6.2</junit.jupiter.version>
+        <jdk.version>15</jdk.version>
+        <junit.jupiter.version>5.7.1</junit.jupiter.version>
         <maven.compiler.version>3.8.1</maven.compiler.version>
         <maven.surefire.version>2.22.2</maven.surefire.version>
         <selenium.version>3.141.59</selenium.version>
@@ -69,7 +69,7 @@
             <properties>
             	<hub-url>http://localhost:4444/wd/hub</hub-url>
                 <app-url>https://dev.accesshq.com</app-url> <!-- e.g -->
-                <implicit-wait-seconds>5</implicit-wait-seconds>
+                <implicit-wait-seconds>3</implicit-wait-seconds>
             </properties>
         </profile>
         

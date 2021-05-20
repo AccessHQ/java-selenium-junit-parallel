@@ -39,33 +39,4 @@ class ExampleTests extends BaseTestSuite {
         Assertions.assertEquals("Quality Humans ... because people make technology", h1Element.getText());
 	}
 	
-	@Test
-	void testHomePageHeading2() {
-		WebDriver driver = getDriver();
-		WebElement h1Element = driver.findElement(By.tagName("h1"));
-        Assertions.assertEquals("Human Quality ... because people make technology", h1Element.getText());
-	}
-
-	@Test
-	void testCareersPageHeading2() {
-		WebDriver driver = getDriver();
-        driver.findElement(By.linkText("Careers")).click();
-        WebElement h1Element = driver.findElement(By.tagName("h1"));
-        Assertions.assertEquals("Careers", h1Element.getText());
-	}
-	
-	@Test
-	void testAboutPageHeading2() {
-		WebDriver driver = getDriver();
-        driver.findElement(By.linkText("About us")).click();
-        WebElement h1Element = driver.findElement(By.tagName("h1"));
-        Assertions.assertEquals("About Us", h1Element.getText());
-	}
-	
-	@Test
-	void testFailingHomePageHeading2() {
-		WebDriver driver = getDriver();
-        WebElement h1Element = driver.findElement(By.tagName("h1"));
-        Assertions.assertEquals("Quality Humans ... because people make technology", h1Element.getText());
-	}
 }

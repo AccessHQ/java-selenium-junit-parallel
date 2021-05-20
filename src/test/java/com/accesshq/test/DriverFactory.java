@@ -4,6 +4,7 @@ import java.net.MalformedURLException;
 import java.net.URL;
 import java.util.concurrent.TimeUnit;
 
+import org.openqa.selenium.Dimension;
 import org.openqa.selenium.Platform;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
@@ -46,7 +47,8 @@ public class DriverFactory
             case "chrome":
                 ChromeOptions chromeOptions = new ChromeOptions();
                 chromeOptions.addArguments("--start-maximized");
-                chromeOptions.setCapability(CapabilityType.PLATFORM_NAME, Platform.ANY);
+                chromeOptions.addArguments("--headless", "--disable-gpu", "--window-size=1920,1200");
+				chromeOptions.setCapability(CapabilityType.PLATFORM_NAME, Platform.ANY);
                 return new RemoteWebDriver(new URL(Config.HUB_URL), chromeOptions);
             case "firefox":
                 FirefoxOptions firefoxOptions = new FirefoxOptions();
@@ -55,7 +57,6 @@ public class DriverFactory
             default:
                 throw new IllegalArgumentException(String.format("Invalid remote browser parameter - '%s'", Config.BROWSER));
         }
-
         
     }
     
@@ -64,8 +65,11 @@ public class DriverFactory
 			case "chrome":
 				// chromedriver in path, or set ....
                 // System.setProperty("webdriver.chrome.driver", "path/to/chromedriver");
-	
-				return new ChromeDriver();
+				ChromeOptions chromeOptions = new ChromeOptions();
+				//chromeOptions.addArguments( "--window-size=1920,1200");
+				WebDriver driver = new ChromeDriver(chromeOptions);
+				driver.manage().window().setSize(new Dimension(1920,1200));
+				return driver;
 			case "firefox":
 				// geckodriver in path, or set ....
                 // System.setProperty("webdriver.gecko.driver", "path/to/geckodriver");
@@ -75,5 +79,4 @@ public class DriverFactory
 				throw new IllegalArgumentException(String.format("Invalid local browser parameter - '%s'", Config.BROWSER));
 		}
 	}
- 
 }
